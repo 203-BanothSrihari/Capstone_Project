@@ -1,0 +1,48 @@
+<div class="container-fulid">
+  <div class="col-12">
+    <app-navigation></app-navigation>
+  </div><br><br><br><br>
+  <div class="col-12">
+    <div class="jumbutron py-4">
+      <h1 class="display-4 text-center" style="font-size:50px;"> Mobile Phones </h1>
+    </div><br>
+    <div class="row">
+      <div class="col-4">
+
+      </div>
+     
+      <div class="col-4">
+        <form class=" center form-inline custom-centered">
+         
+          <div class="input-group">
+             
+              <input type="text" class="  form-control mr-sm-2" name="description" [(ngModel)]="description" 
+        placeholder="Enter to Search">
+              <div class="input-group-prepend">
+                  <button class ="btn btn-warning input-group-text" (click) ="Search()"> Search </button>
+              </div>
+          </div>
+      </form>
+      </div>
+    </div>
+    
+  </div>
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let pd of productlist">
+        <div class="card col-md-3">
+  
+       <!----  <h1 class="card-title" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+            {{pd.productCode}}</h1><br>   -->
+            <img src="https://thekukoo.com/wp-content/uploads/2020/06/iphone-d-green.png">
+          <h4><b>{{pd.category}}</b></h4>
+          <p class="card-text" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+            {{pd.description}}</p>
+          <h3 class="card-title"><strong>Rs.{{pd.unitPrice}}</strong></h3>
+          <button type="button" (click)="addtocart(pd)" class="btn btn-danger">Add To Cart</button>
+        </div>
+      </ng-container>
+    </div>
+  
+  </div>
+</div>
